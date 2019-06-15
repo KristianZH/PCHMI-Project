@@ -1,0 +1,55 @@
+html,body{
+  height:100%;
+}
+
+h1{
+	display:inline;
+	white-space:nowrap;
+	padding:10px;
+	position: absolute;
+	left: 40%;
+	top: 20%;
+}
+h2{
+	display:inline;
+	white-space:nowrap;
+	padding:10px;
+	position: absolute;
+	left: 40%;
+	top: 25%;	
+}
+
+img{
+	 width: 400px;
+	 height: 300px;
+	 display:inline;
+}
+
+button{
+	display:inline;
+	background:#1AAB8A;
+	color:#fff;
+	border:none;
+	position:relative;
+	height:60px;
+	font-size:1.6em;
+	padding:0 2em;
+	cursor:pointer;
+	outline:none;
+	left: 220%;
+}
+
+div{
+	padding-bottom:15px;
+	display:inline;
+}
+
+form{
+	display:inline-block;
+}
+table{
+	display:inline-block;
+	margin-right:10px;
+}
+
+
