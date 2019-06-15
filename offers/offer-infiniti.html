@@ -87,8 +87,24 @@
 </tbody>
 </table>
 
-<form action="reservation.html">
-			<button>Резервирай</button>
+<form action='../offers.html' enctype='multipart/form-data' method='post' onsubmit="return myFunction()">
+	<button>Резервирай</button>
 </form>
+</body>
+<script>
+function myFunction()
+{
+    var x;
+    if (confirm("Потвърждение") == true)
+    {
+        x = "You pressed OK!";
+    }
+    else
+    {
+        x = "You pressed Cancel!";/*Want this to not run the .bat*/
+    }
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
 </body>
 </html>
