@@ -1,7 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Type" charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <title>Vacations</title>
 </head>
@@ -14,13 +14,12 @@
           <a href="index.html">Начало</a>
           <a href="offers.html">Оферти</a>
           <a href="contacts.html">Контакти</a>
-		  <?php 
-		  if(isset($_SESSION['username'])){
-				echo '<><a href="lin.php">Вход</a>';
-			}else{
-				echo '<><a href="lout.php">Изход</a>';
-			}			
-			?>
+		  <?php session_start(); 
+		  if(isset($_SESSION['username'])){?>
+			<a href="lout.php">Изход</a>
+		  <?php }else{ ?>
+			<a href="lin.php">Вход</a>
+		  <?php } ?>
         </div>
     </div>
 	<div id="content">
