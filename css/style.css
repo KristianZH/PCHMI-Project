@@ -6,7 +6,7 @@ body {
 	font-size: 13px;
 	color: #000000;
 	background: #1364A6;
-	background-image:url(images/background.png);
+	background-image:url(../images/background.png);
 	background-repeat:repeat-x;
 	margin: 0 auto 0 auto;
 }
@@ -21,7 +21,7 @@ body {
   height:auto;
   position: relative; 
   width: 750px;
-  background-image:url(images/background.jpg);
+  background-image:url(../images/background.jpg);
   background-repeat:repeat-y;
   padding-left:17px;
   padding-right:17px;
