@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="../css/offer.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -86,18 +88,18 @@
 </tbody>
 </table>
 
-<form action='../offers.html' enctype='multipart/form-data' method='post' onsubmit="return myFunction()">
+<form action='../offers.php' enctype='multipart/form-data' method='post' onsubmit="return myFunction()">
 	<button>Резервирай</button>
 </form>
 </body>
 <script>
 function myFunction()
 {
-    var username = '<%= Session["UserName"] %>';
+    var username = '<%= Session["username"] %>';
     if(username!=""){
-        alert("You are not logged in");
+		confirm("Потвърждение");
     } else {
-        confirm("Потвърждение");
+        alert("You are not logged in");
     }
 }
 </script>

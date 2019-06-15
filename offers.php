@@ -2,6 +2,7 @@
 <html>
 <title>Оферти</title>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Type" charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/w3.css">
 <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -14,10 +15,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif, background-color}
 <!-- Top menu -->
 <div id="header" class="header">
     <div id="links">
-      <a href="index.html">Начало</a>
-      <a href="offers.html">Оферти</a>
+      <a href="index.php">Начало</a>
+      <a href="offers.php">Оферти</a>
       <a href="contacts.html">Контакти</a>
-      <a href="#">Вход</a>
+       <?php session_start(); 
+		  if(isset($_SESSION['username'])){?>
+			<a href="lout.php">Изход</a>
+		<?php }else{ ?>
+			<a href="lin.php">Вход</a>
+		<?php } ?>
   </div>
 </div>
   

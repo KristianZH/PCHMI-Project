@@ -11,8 +11,8 @@
 	<div id="header">
 		<h1>Екскурзии</h1>
         <div id="links">
-          <a href="index.html">Начало</a>
-          <a href="offers.html">Оферти</a>
+          <a href="index.php">Начало</a>
+          <a href="offers.php">Оферти</a>
           <a href="contacts.html">Контакти</a>
 		  <?php session_start(); 
 		  if(isset($_SESSION['username'])){?>

@@ -1,6 +1,6 @@
 <?php 
   $host = 'localhost';
-  $db_name = 'PCHMI';
+  $db_name = 'pchmi';
   $username = 'root';
   $password = '';
   // $host = 'mysql';
@@ -8,10 +8,11 @@
   // $username = 'root';
   // $password = 'password';
 
-  $con = mysqli_connect($host,$username,$password,$db_name);
- 
-  // Check connection
-  if (mysqli_connect_errno()) {
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
+  try{
+		$conn = new PDO('mysql:host=localhost;dbname=pchmi', 'root', '',	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+	}catch(PDOexception $e){
+		$error_msg = $e -> getMessege();
+		echo $error_msg;
+		exit();
+	}
 ?>

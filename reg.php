@@ -1,17 +1,12 @@
 <?php
+
+require "config/Database.php";
 session_start();
 if(isset($_SESSION['username'])){
 	header("Location: index.html");
 }
 
 if($_POST){
-	try{
-		$conn = new PDO('mysql:host=localhost;dbname=database', 'root', '',	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-	}catch(PDOexception $e){
-		$error_msg = $e -> getMessege();
-		echo $error_msg;
-		exit();
-	}
 registerUser();
 }
 
@@ -25,7 +20,7 @@ function registerUser(){
 		http_response_code(400);
 		die(errorMessageInJSON('Username is taken!'));
 	}
-	$sql = "INSERT INTO `hotel` VALUES ('$username','$password')";
+	$sql = "INSERT INTO users VALUES (null,'$username','$password')";
 	$query = $conn->query($sql) or die('Request unsuccessful');
 	
 	session_start();
@@ -36,7 +31,7 @@ function registerUser(){
 
 function isAllreadyRegistered($username){
 	global $conn;
-	 $sql = "SELECT * FROM hotel WHERE username='$username'";
+	 $sql = "SELECT * FROM users WHERE username='$username'";
 	 $query = $conn->query($sql) or die(errorMessageInJSON('Request unsuccessful'));
 	 $row = $query->fetch(PDO::FETCH_ASSOC);
 	 if(!$row){

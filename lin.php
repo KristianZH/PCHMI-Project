@@ -1,17 +1,13 @@
 <?php
+
+require 'config/Database.php';
+
 session_start();
 if(isset($_SESSION['username'])){
 	header("Location: index.php");
 }
 
 if($_POST){
-	try{
-		$conn = new PDO('mysql:host=localhost;dbname=database', 'root', '',	array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
-	}catch(PDOexception $e){
-		$error_msg = $e -> getMessege();
-		echo $error_msg;
-		exit();
-	}
 loginUser();
 }
 
@@ -31,8 +27,8 @@ function loginUser(){
 
 function isRegistered($username, $password){
 	global $conn;
-	$sql = "SELECT password FROM hotel WHERE username='$username'";
-	$query = $conn->query($sql) or die(errorMessageInJSON('Request unsuccessful'));
+	$sql = "SELECT password FROM users WHERE username='$username'";
+	$query = $conn->query($sql);
 	$row = $query->fetch(PDO::FETCH_ASSOC);
 	
 	if (password_verify($password, $row['password'])) {
